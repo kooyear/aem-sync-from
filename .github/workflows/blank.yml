@@ -21,18 +21,47 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-
+      with:
+        persist-credentials: false
     - name: Git-version
       run: git version
     - name: Git-remote-add
-      run: git remote add adobe https://kooyear:guye911016@github.com/kooyear/aem-sync-to.git
+      run: git remote add adobe https://github.com/kooyear/aem-sync-to.git
     - name: Git-fetch-all
-      run: git fetch --all --prune --unshallow
-    - name: Git-remote
-      run: git remote -v     
+      run: git fetch --all
     - name: Git-checkout-adobe
       run: git checkout -b sync-demo-master adobe/master
+    - name: set user
+      run: |
+        git config --global user.email "kooyear@gmail.com"
+        git config --global user.name "Ye-Gu"
     - name: Git-merge
-      run: git merge master
-    - name: Git-push
-      run: git push --set-upstream adobe master
+      run: |
+        git merge master --allow-unrelated-histories
+        git fetch --unshallow origin
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+#        branch: sync-demo-master
+        github_token: ${{ secrets.PAT }}
+        repository: kooyear/aem-sync-to
+        force: true
+
+
+
+
+
+#     - name: Git-version
+#       run: git version
+#     - name: Git-remote-add
+#       run: git remote add adobe https://kooyear:guye911016@github.com/kooyear/aem-sync-to.git
+#     - name: Git-fetch-all
+#       run: git fetch --all --prune --unshallow
+#     - name: Git-remote
+#       run: git remote -v     
+#     - name: Git-checkout-adobe
+#       run: git checkout -b sync-demo-master adobe/master
+#     - name: Git-merge
+#       run: git merge master
+#     - name: Git-push
+#       run: git push --set-upstream adobe master
