@@ -20,7 +20,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
+    - uses: srt32/git-actions@v0.0.3
 #       with:
 #         persist-credentials: false
 #     - name: Git-version
@@ -46,6 +46,10 @@ jobs:
 #         github_token: ${{ secrets.PAT }}
 #         repository: kooyear/aem-sync-to
 #         force: true
+    - name: Git-clone
+      run: git clone https://github.com/kooyear/aem-sync-from.git
+    - name: Red
+      run: cd aem-sync-from
     - name: Git-version
       run: git version
     - name: Git-remote-add
