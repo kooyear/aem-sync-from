@@ -64,7 +64,7 @@ jobs:
         git checkout master
     - name: Git-fetch-all
       run: |
-        cd aem-sync-fromgit 
+        cd aem-sync-from
         git fetch --all --prune --unshallow
     - name: ls
       run: ls -a
