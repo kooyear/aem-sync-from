@@ -54,7 +54,7 @@ jobs:
     - name: Git-version
       run: git version
     - name: Git-remote-add
-      run: git remote add adobe https://kooyear:guye911016@github.com/kooyear/aem-sync-to.git
+      run: git remote add adobe https://${{ secrets.PAT }}@github.com/kooyear/aem-sync-to.git
     - name: Git-fetch-all
       run: git fetch --all --prune --unshallow
     - name: Git-remote
