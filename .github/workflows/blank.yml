@@ -55,7 +55,9 @@ jobs:
     - name: Git-fetch-all
       run: git fetch --all --prune --unshallow
     - name: ls
-      run: ls
+      run: ls -a
+    - name: show-branches
+      run: git show-branch -a
 #     - name: Git-remote
 #       run: git remote -v     
 #     - name: Git-branches
