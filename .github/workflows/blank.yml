@@ -57,7 +57,7 @@ jobs:
     - name: ls
       run: ls -a
     - name: show-branches
-      run: git show-branch -a
+      run: git show-branch -a -r
 #     - name: Git-remote
 #       run: git remote -v     
 #     - name: Git-branches
