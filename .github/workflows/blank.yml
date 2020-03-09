@@ -60,8 +60,8 @@ jobs:
         git remote add adobe https://${{ secrets.PAT }}@github.com/kooyear/aem-sync-to.git
     - name: Git-checkout
       run: |
-        cd aem-sync-fromgit 
-        checkout master
+        cd aem-sync-from
+        git checkout master
     - name: Git-fetch-all
       run: |
         cd aem-sync-fromgit 
