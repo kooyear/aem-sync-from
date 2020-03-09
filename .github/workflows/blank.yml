@@ -54,13 +54,15 @@ jobs:
       run: git checkout master
     - name: Git-fetch-all
       run: git fetch --all --prune --unshallow
-    - name: Git-remote
-      run: git remote -v     
-    - name: Git-branches
-      run: git branch
-    - name: Git-checkout-adobe
-      run: git checkout -b sync-demo-master adobe/master
-    - name: Git-merge
-      run: git merge origin/master
-    - name: Git-push
-      run: git push --set-upstream adobe master
+    - name: ls
+      run: ls
+#     - name: Git-remote
+#       run: git remote -v     
+#     - name: Git-branches
+#       run: git branch
+#     - name: Git-checkout-adobe
+#       run: git checkout -b sync-demo-master adobe/master
+#     - name: Git-merge
+#       run: git merge origin/master
+#     - name: Git-push
+#       run: git push --set-upstream adobe master
