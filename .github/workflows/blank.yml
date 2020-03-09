@@ -27,7 +27,7 @@ jobs:
       run: |
         git clone https://github.com/kooyear/aem-sync-from
         cd aem-sync-from
-        git remote add adobe https://github.com/kooyear/aem-sync-to.git 
+        git remote add adobe https://${{ secrets.PAT }}github.com/kooyear/aem-sync-to.git 
         git fetch --all 
         git checkout -b sync-demo-master adobe/master 
         git merge master 
