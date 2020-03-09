@@ -54,6 +54,8 @@ jobs:
       run: git fetch --all --prune --unshallow
     - name: Git-remote
       run: git remote -v     
+    - name: Git-branches
+      run: git branch
     - name: Git-checkout-adobe
       run: git checkout -b sync-demo-master adobe/master
     - name: Git-merge
