@@ -46,11 +46,6 @@ jobs:
 #         github_token: ${{ secrets.PAT }}
 #         repository: kooyear/aem-sync-to
 #         force: true
-
-
-
-
-
     - name: Git-version
       run: git version
     - name: Git-remote-add
