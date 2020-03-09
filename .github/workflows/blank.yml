@@ -50,6 +50,8 @@ jobs:
       run: git clone https://github.com/kooyear/aem-sync-from.git
     - name: Red
       run: cd aem-sync-from
+    - name: ls
+      run: ls -a
     - name: Git-version
       run: git version
     - name: Git-remote-add
