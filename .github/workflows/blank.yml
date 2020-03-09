@@ -65,18 +65,19 @@ jobs:
     - name: Git-fetch-all
       run: |
         cd aem-sync-from
-        git fetch --all --prune --unshallow
-    - name: ls
-      run: ls -a
-    - name: show-branches
-      run: git show-branch -a -r
-#     - name: Git-remote
-#       run: git remote -v     
-#     - name: Git-branches
-#       run: git branch
-#     - name: Git-checkout-adobe
-#       run: git checkout -b sync-demo-master adobe/master
-#     - name: Git-merge
-#       run: git merge origin/master
+        git fetch --all
+    - name: Git-remote
+      run: |
+        cd aem-sync-from
+        git remote -v     
+
+    - name: Git-checkout-adobe
+      run: |
+        cd aem-sync-from
+        git checkout -b sync-demo-master adobe/master
+    - name: Git-merge
+      run: |
+        cd aem-sync-from
+        git merge origin/master
 #     - name: Git-push
 #       run: git push --set-upstream adobe master
